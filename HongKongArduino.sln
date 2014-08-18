@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinHongKongArduino", "WinHongKongArduino\WinHongKongArduino.csproj", "{1CED63E5-3F09-4767-A002-808BA72CD519}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinHongKongFCArduino", "WinHongKongFCArduino\WinHongKongFCArduino.csproj", "{DA87ECC3-200A-4979-BF45-5356C505FAEC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{1CED63E5-3F09-4767-A002-808BA72CD519}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1CED63E5-3F09-4767-A002-808BA72CD519}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1CED63E5-3F09-4767-A002-808BA72CD519}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA87ECC3-200A-4979-BF45-5356C505FAEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA87ECC3-200A-4979-BF45-5356C505FAEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA87ECC3-200A-4979-BF45-5356C505FAEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA87ECC3-200A-4979-BF45-5356C505FAEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
