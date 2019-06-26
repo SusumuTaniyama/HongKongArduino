@@ -1,62 +1,62 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
 <html>
 <head>
-<meta http-equiv="content-type" content="text/html; charset=x-sjis">
-<title>�z���R��2.2</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
+<title>ホンコン2.2</title>
 <meta name="generator" content="Namo WebEditor v3.0">
 </head>
 
 <body bgcolor="white" text="black" link="blue" vlink="purple" alink="red">
 
-<h2>����</h2>
-<p>74�V���[�Y��HC���g�p�����ق����悢�ł��B<img src="connect.gif" width="11"
- height="11" alt="connect.gif (53 bytes)">���Ȃ��Č�����Ă�����͌������Ȃ��Ƃ����Ӗ��ł��B<br>
-�J�[�h�G�b�W�R�l�N�^�̃s���ԍ���<a href="rom.htm">SFCROM�J�[�h���b�W</a>�̃s���ԍ��ɑΉ����܂��B�\���ɒ��ӂ��Ă��������B</p>
-<h2>����</h2>
-<p>�d����GND�̊ԂɃ^���^���R���f���T10�}�C�N�����͂���ł��܂���<br>
-�p�X�R���̓d�������p�ɖ��ɗ����܂��B<br>
-�������A�ɐ��ɂ͏\�����ӂ��Ă��������B<br>
-�ԈႦ��ƃV���[�g����IC���󂵂܂��B<br>
-�^���^���R���f�T�͂Ȃ��Ă����v�ł��B<br>
-���삪�s����ȂƂ��ɂ��Ă��������B<br>
-74HC00��3Y�[�q����o�Ă�����͕K��1�{�łȂ��ł��������B<br>
-�r���Ŏ}�����ꂷ��悤�ȂȂ���������ƐM���̔��˂��N����<br>
-���ꂢ�ȃN���b�N������Ȃ��Ȃ�܂��B<br>
-��H�}���Ŏl�p�ň͂�1K�͏W����R�̈Ӗ��ł�(�����ȋL���ł͂���܂���)�B</p>
-<h2>��H�L���\</h2>
+<h2>説明</h2>
+<p>74シリーズはHCを使用したほうがよいです。<img src="connect.gif" width="11"
+ height="11" alt="connect.gif (53 bytes)">がなくて交わっている線は結線しないという意味です。<br>
+カードエッジコネクタのピン番号は<a href="rom.htm">SFCROMカードリッジ</a>のピン番号に対応します。表裏に注意してください。</p>
+<h2>注意</h2>
+<p>電源とGNDの間にタンタルコンデンサ10マイクロをはさんでいますが<br>
+パスコンの電源供給用に役に立ちます。<br>
+ただし、極性には十分注意してください。<br>
+間違えるとショートしてICを壊します。<br>
+タンタルコンデサはなくても大丈夫です。<br>
+動作が不安定なときにつけてください。<br>
+74HC00の3Y端子から出ている線は必ず1本でつないでください。<br>
+途中で枝分かれするようなつなぎ方をすると信号の反射が起きて<br>
+きれいなクロックが入らなくなります。<br>
+回路図中で四角で囲んだ1Kは集合抵抗の意味です(正式な記号ではありません)。</p>
+<h2>回路記号表</h2>
 <table border width="84%">
     <tr>
-        <td width="8%"><p>�L��</td>
-        <td width="15%"><p>����</td>
-        <td width="77%"><p>����</td>
+        <td width="8%"><p>記号</td>
+        <td width="15%"><p>名称</td>
+        <td width="77%"><p>説明</td>
     </tr>
     <tr>
         <td width="8%"><p><img src="array.gif" width="73" height="23" alt="array.gif (196 bytes)"></td>
-        <td width="15%"><p>�W����R</td>
-        <td width="77%"><p>�Б�����Ɍ������ꂽ��R�̏W�܂�B���ʂ̐��ɂ͈󂪂��Ă���B</td>
+        <td width="15%"><p>集合抵抗</td>
+        <td width="77%"><p>片側が一つに結線された抵抗の集まり。共通の線には印がついている。</td>
     </tr>
     <tr>
         <td width="8%"><p><img src="led.gif" width="34" height="18" alt="led.gif (96 bytes)"></td>
-        <td width="15%"><p>LED(�����_�C�I�[�h)</td>
-        <td width="77%"><p>���̕����ɂ����d���𗬂����A�d���������Ɣ��s����f�q�B</td>
+        <td width="15%"><p>LED(発光ダイオード)</td>
+        <td width="77%"><p>矢印の方向にしか電流を流さず、電流が流れると発行する素子。</td>
     </tr>
     <tr>
         <td width="8%"><p><img src="polecon.gif" width="18" height="16" alt="polecon.gif (73 bytes)"></td>
-        <td width="15%"><p>�d���R���f���T</td>
-        <td width="77%"><p>�ɐ��̂���R���f���T�B+���̒[�q�̓d���������Ȃ��Ƃ����Ȃ��B</td>
+        <td width="15%"><p>電解コンデンサ</td>
+        <td width="77%"><p>極性のあるコンデンサ。+側の端子の電圧が高くないといけない。</td>
     </tr>
     <tr>
         <td width="8%"><p><img src="vcc.gif" width="24" height="13" alt="vcc.gif (67 bytes)"></td>
-        <td width="15%"><p>�d��(Vcc)</td>
-        <td width="77%"><p>���̋L���̂���Ƃ���͂��ׂČ������d���ɂȂ��B</td>
+        <td width="15%"><p>電源(Vcc)</td>
+        <td width="77%"><p>この記号のあるところはすべて結線し電源につなぐ。</td>
     </tr>
     <tr>
         <td width="8%"><p><img src="gnd.gif" width="21" height="13" alt="gnd.gif (68 bytes)"></td>
-        <td width="15%"><p>GND(�O�����h�j</td>
-        <td width="77%"><p>�ڒn�B���̋L���̂���Ƃ���͂��ׂČ�������B�d�ʂ��[���ł��邱�Ƃ�\���B</td>
+        <td width="15%"><p>GND(グランド）</td>
+        <td width="77%"><p>接地。この記号のあるところはすべて結線する。電位がゼロであることを表す。</td>
     </tr>
 </table>
-<h2>��H�}</h2>
+<h2>回路図</h2>
 <p><img src="hongkong2.2.gif"></p>
 </body>
 

@@ -1,93 +1,94 @@
 <html>
 
 <head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="GENERATOR" content="Microsoft FrontPage 3.0">
-<title>�z���R���덆</title>
+<title>ホンコン壱号</title>
 </head>
 
 <body bgcolor="#000000" text="#FFFFFF" link="#FFFF00" vlink="#FF00FF" background="bg.jpg">
 
-<h2><a name="�z���R��1��"></a>�z���R��1��</h2>
+<h2><a name="ホンコン1号"></a>ホンコン1号</h2>
 
-<p>�ėp�z�o���@�̑�ꍆ�ł��B74138�̋����s�R�ɂ͋�J���܂����B</p>
+<p>汎用吸出し機の第一号です。74138の挙動不審には苦労しました。</p>
 
-<h3>�z���R���P���̍���</h3>
+<h3>ホンコン１号の作り方</h3>
 
-<p>�z���R���P���̓A�_�v�^�����ւ��邱�Ƃɂ�����e�@��̃����ɑΉ��ł���悤�ɂȂ��Ă��܂��B���݊������Ă���̂̓X�[�p�[�t�@�~�R���̃A�_�v�^�ł��B 
+<p>ホンコン１号はアダプタを取り替えることによった各機種のロムに対応できるようになっています。現在完成しているのはスーパーファミコンのアダプタです。 
 
 <ul>
-  <li><a href="#mark1">��H�}</a> </li>
-  <li><a href="#mark2">�X�[�p�[�t�@�~�R���p�A�_�v�^��H�}</a> </li>
-  <li><a href="#mark3">�v���O�����\�[�X</a> </li>
+  <li><a href="#mark1">回路図</a> </li>
+  <li><a href="#mark2">スーパーファミコン用アダプタ回路図</a> </li>
+  <li><a href="#mark3">プログラムソース</a> </li>
 </ul>
 
-<p><font color="#FF0000">���� </font>�v�����^�|�[�g���o�����łȂ��ꍇ�͓��삵�܂���B�܂��A�v�����^�|�[�g���o�����ł�BIOS�̐ݒ莟��œ��삵�Ȃ��ꍇ������܂��B�A���[�h��BIOS�̏ꍇ�̓p�������|�[�g��EPP�ɐݒ肷��K�v������܂��B 
+<p><font color="#FF0000">注意 </font>プリンタポートが双方向でない場合は動作しません。また、プリンタポートが双方向でもBIOSの設定次第で動作しない場合があります。アワードのBIOSの場合はパラレルポートをEPPに設定する必要があります。 
 </p>
 
-<h4><a name="mark1"></a>��H�}</h4>
+<h4><a name="mark1"></a>回路図</h4>
 
-<p>�{�̂̉�H�}�ł��B�p�\�R���Ƃ̐ڑ��ɂ͑o�����v�����^�|�[�g�A�A�_�v�^�̎��t���̓t���b�g�P�[�u���ōs���܂��B��H�͒P���ł����A�z���������̂Ŕz���~�X�ɂ͋C��t���܂��傤�B 
+<p>本体の回路図です。パソコンとの接続には双方向プリンタポート、アダプタの取り付けはフラットケーブルで行います。回路は単純ですが、配線が多いので配線ミスには気を付けましょう。 
 </p>
 
-<p>�ޗ� 
+<p>材料 
 
 <ul>
-  <li>74LS138 : 3 to 8 �f�R�[�_ </li>
+  <li>74LS138 : 3 to 8 デコーダ </li>
   <li>74HC244 : 3statebuffer </li>
-  <li>74HC273 : 8 D-�t���b�v�t���b�v </li>
+  <li>74HC273 : 8 D-フリップフロップ </li>
   <li>LED * 32 </li>
-  <li>10K�� 4�W����R </li>
-  <li>1K�� 8�W����R * 4 </li>
-  <li>1K��, 10K��, 100�� * 32 </li>
-  <li>150�� * 8 </li>
-  <li>MC7805 : 3�[�q���M�����[�^ </li>
-  <li>100��F, 10��F �R���f���T </li>
-  <li>0.1��F �R���f���T * 11 </li>
-  <li>2SC1815 * 32 : �g�����W�X�^ </li>
-  <li>�v�����^�P�[�u���[�q </li>
-  <li>34�s�������R�l�N�^ </li>
-  <li>���A�z���ނȂ� </li>
+  <li>10KΩ 4集合抵抗 </li>
+  <li>1KΩ 8集合抵抗 * 4 </li>
+  <li>1KΩ, 10KΩ, 100Ω * 32 </li>
+  <li>150Ω * 8 </li>
+  <li>MC7805 : 3端子レギュレータ </li>
+  <li>100μF, 10μF コンデンサ </li>
+  <li>0.1μF コンデンサ * 11 </li>
+  <li>2SC1815 * 32 : トランジスタ </li>
+  <li>プリンタケーブル端子 </li>
+  <li>34ピン圧着コネクタ </li>
+  <li>他、配線材など </li>
 </ul>
 
-<p>��H�}��<a href="HKCIR1.HTM">������</a> </p>
+<p>回路図は<a href="HKCIR1.HTM">こちら</a> </p>
 
-<p>��Ղ̎ʐ^ <a href="hongkong.jpg">�\</a> <a href="hongkong2.jpg">��</a></p>
+<p>基盤の写真 <a href="hongkong.jpg">表</a> <a href="hongkong2.jpg">裏</a></p>
 
-<p>�Q�l���� 
+<p>参考資料 
 
 <ul>
-  <li>�o�b�N�A�b�v���p�e�N�j�b�N���W�� </li>
-  <li>�g�����W�X�^�Z�p1996 12 </li>
-  <li>�V�S�V���[�YIC�K�i�\ </li>
+  <li>バックアップ活用テクニック総集編 </li>
+  <li>トランジスタ技術1996 12 </li>
+  <li>７４シリーズIC規格表 </li>
 </ul>
 
-<h4><a name="mark2"></a>�X�[�p�[�t�@�~�R���p�A�_�v�^��H�}</h4>
+<h4><a name="mark2"></a>スーパーファミコン用アダプタ回路図</h4>
 
-<p>�z���R���P���Ɏ��t���ăX�[�p�[�t�@�~�R���̃����f�[�^���z���o����悤�ɂ���A�_�v�^�ł��B�ȒP�ł��B 
+<p>ホンコン１号に取り付けてスーパーファミコンのロムデータを吸い出せるようにするアダプタです。簡単です。 
 </p>
 
-<p>�ޗ� 
+<p>材料 
 
 <ul>
   <li>74HC244 : 3statebuffer </li>
-  <li>74HC273 : 8 D-�t���b�v�t���b�v </li>
+  <li>74HC273 : 8 D-フリップフロップ </li>
   <li>LED * 8 </li>
-  <li>1K�� * 8 </li>
-  <li>1K�� 8�W����R </li>
-  <li>34�s�������R�l�N�^ </li>
-  <li>���A�z���ނȂ� </li>
+  <li>1KΩ * 8 </li>
+  <li>1KΩ 8集合抵抗 </li>
+  <li>34ピン圧着コネクタ </li>
+  <li>他、配線材など </li>
 </ul>
 
-<p>��H�}��<a href="snesrom.gif">������</a> </p>
+<p>回路図は<a href="snesrom.gif">こちら</a> </p>
 
-<h4><a name="mark3"></a>�v���O�����\�[�X�iC/C++)</h4>
+<h4><a name="mark3"></a>プログラムソース（C/C++)</h4>
 
-<p>���݃R�}���h���C���̃f�o�b�O�@�\���\�t�g��p�ӂ��Ă��܂��B�P�̃A�h���X�����Ă��Ēl�𒲂ׂ���A�v�����^�|�[�g�Ɏ��R�Ȓl���o�͂�����ł��܂��B��H���ł�����̃f�o�b�O�ŏd�󂵂܂��B�������z�o���@�\������܂��B 
+<p>現在コマンドラインのデバッグ機能つきソフトを用意しています。１つのアドレスをしてして値を調べたり、プリンタポートに自由な値を出力したりできます。回路ができた後のデバッグで重宝します。もちろん吸出し機能もあります。 
 </p>
 
-<p>�\�[�X�t�@�C����<a href="hongkong.cpp">������</a> </p>
+<p>ソースファイルは<a href="hongkong.cpp">こちら</a> </p>
 
-<p>IO�|�[�g�𑀍삷��֐����R���p�C���ɗp�ӂ���ĂȂ��Ƃ��̓C�����C���A�Z���u���ɂ���Ď��̊֐����`���Ă��������B 
+<p>IOポートを操作する関数がコンパイラに用意されてないときはインラインアセンブラによって次の関数を定義してください。 
 </p>
 
 <p>void outp(unsigned short port, unsigned char databyte)<br>
@@ -108,9 +109,9 @@ in al, dx<br>
 }<br>
 </p>
 
-<p>VisualC++�̏ꍇ��_outport��_inport�֐������p�ł��܂��B</p>
+<p>VisualC++の場合は_outportと_inport関数が利用できます。</p>
 
-<p>Windows95�̃R���\�[�����[�h�p�ɃR���p�C���������s�\�t�@�C����<a
-href="hongkong.lzh">������</a> </p>
+<p>Windows95のコンソールモード用にコンパイルした実行可能ファイルは<a
+href="hongkong.lzh">こちら</a> </p>
 </body>
 </html>
