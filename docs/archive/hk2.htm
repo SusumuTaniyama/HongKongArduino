@@ -19,25 +19,25 @@
     <h3 align="center">目次</h3>
     <p align="center"><a href="#circuit">[回路図]</a><a href="#parts">[部品表]</a><a
 
-        href="#%83v%83%8A%83%93%83%5E%83%7C%81%5B%83g%82%CC%8BK%8Ai">[プリンタポートの規格]</a><a
+        href="#printerport">[プリンタポートの規格]</a><a
 
-        href="#SFC%83J%81%5B%83g%83%8A%83b%83W">[SFCカートリッジ]</a><a href="#program">[プログラム]</a><a
+        href="#cartridge">[SFCカートリッジ]</a><a href="#program">[プログラム]</a><a
 
         href="#romlist">[吸出し確認済みロム]</a></p>
-    <h3><a name="回路図">回路図</a></h3>
+    <h3><a name="circuit">回路図</a></h3>
     <p><font color="red">以前の回路は不安定であったため一部変しました。プログラムもあわせて変更しています。</font></p>
     <p><a href="hkcir2.2.htm">ホンコン2.2の回路図</a>（最新版)<br>
       <a href="kairo/kairo_yomikata.htm">回路図の読み方解説</a></p>
     <p><a href="hkcir2.htm">ホンコン2.0の回路図</a></p>
     <p><a href="forprogram.htm">回路の動作原理とプログラム作成のヒント</a>　動作原理を知りたい人独自に改良をしたい人には役に立ちます。</p>
     <p>双方向のプリンタポートを使用しています。<br>
-      注意点はICには必ず<a href="onepoint.htm#%83p%83X%83R%83%93">パスコン</a>を入れることと、74はHCを使ったほうが安定することです。あとは、回路図どおりに作れば動きます。<br>
+      注意点はICには必ず<a href="onepoint.htm#passcon">パスコン</a>を入れることと、74はHCを使ったほうが安定することです。あとは、回路図どおりに作れば動きます。<br>
       DOS/VとPC98に対応しています。ロムのコネクタはピッチが2.54mm(ICピッチ)のカードエッチコネクタが市販されているのでそれを23ピン分に切断して使います。<br>
       LEDはデバッグのためなのでつけてもつけなくてもよいですが、つけたほうが動作が確認できて安心ですしピカピカ光ってきれいです。</p>
     <p><font color="red">注意 </font>プリンタポートが双方向でない場合は動作しません。また、プリンタポートが双方向でもBIOSの設定次第で動作しない場合があります。アワードのBIOSの場合はパラレルポートをEPPまたはBIDIRECTIONに設定する必要があります。</p>
     <p>基板表面の写真は<a href="hk2_head.jpg">こちら</a>です。<br>
       基板裏面の写真は<a href="hk2_tail.jpg">こちら</a>です。</p>
-    <h3><a name="部品表">部品表</a></h3>
+    <h3><a name="parts">部品表</a></h3>
     <p>すべて秋葉原で手に入ります。千石電商、ラジオデパートでほとんどそろいます。<br>
       地方の方の場合は、トランジスタ技術の通販の広告を利用するか、<a href="http://www.sengoku.co.jp/"
 
@@ -177,7 +177,7 @@
             <p>1</p>
           </td>
           <td>
-            <p><a href="onepoint.htm#%83v%83%8B%83A%83b%83v">プルアップ</a>用。抵抗4つでも可。</p>
+            <p><a href="onepoint.htm#pullup">プルアップ</a>用。抵抗4つでも可。</p>
           </td>
           <td>
             <p>20</p>
@@ -211,7 +211,7 @@
             <p>1</p>
           </td>
           <td>
-            <p><a href="onepoint.htm#%8EO%92%5B%8Eq%83%8C%83M%83%85%83%8C%81%5B%83%5E">3端子レギュレータ</a>。MCでなくてもかまいません。</p>
+            <p><a href="onepoint.htm#regulator">3端子レギュレータ</a>。MCでなくてもかまいません。</p>
           </td>
           <td>
             <p>未確認<br>
@@ -247,7 +247,7 @@
             <p>9</p>
           </td>
           <td>
-            <p>セラミックコンデンサ。<a href="onepoint.htm#%83p%83X%83R%83%93">パスコン</a>用に7つ、3端子レギュレータ用に2つつける。耐電圧15V以上のもの。</p>
+            <p>セラミックコンデンサ。<a href="onepoint.htm#passcon">パスコン</a>用に7つ、3端子レギュレータ用に2つつける。耐電圧15V以上のもの。</p>
           </td>
           <td>
             <p>未確認<br>
@@ -311,14 +311,14 @@
         </tr>
       </tbody>
     </table>
-    <h3><a name="プリンタポートの規格">プリンタポートの規格</a></h3>
+    <h3><a name="printerport">プリンタポートの規格</a></h3>
     <p>プログラムやデバッグする上でプリンタポートの詳細が必要になるでしょう。<br>
       回路のデバッグはこの表とICの規格表を眺めながらがんばってください。<br>
       デバッグ用のアプリケーションを用意しています。<a href="printerio.lzh">こちら</a>からダウンロードしてください。</p>
     <p><a href="printerport.htm">プリンタポート規格表</a></p>
-    <h3><a name="SFCカートリッジ">SFCカートリッジ</a></h3>
+    <h3><a name="cartridge">SFCカートリッジ</a></h3>
     <p>SFCのカートリッジについては<a href="rom.htm">こちら</a>をご覧ください。</p>
-    <h3><a name="プログラム">プログラム</a></h3>
+    <h3><a name="program">プログラム</a></h3>
     <p><font color="red"> ROMサイズの自動判別機能がつきました。プログラムをMADチップに対応させました。<br>
         2001.3.26 Windows2000に対応しました。 </font></p>
     <p align="left">プログラム解析目的でない限りWinHongKong(GUI版)の方をダウンロードしてください。WinHongKongのアーカイブにはソースコードも含んでいます。</p>
@@ -334,7 +334,7 @@
     <a href="hongkong2.cpp">ホンコン2のソース</a> コンパイル済みのWindows95コンソールモード用実行ファイルは<a
 
       href="hk2.lzh">こちら</a>です。&nbsp;
-    <h3 align="left"><a name="吸出し確認済みロム">吸出し確認済みロム</a></h3>
+    <h3 align="left"><a name="romlist">吸出し確認済みロム</a></h3>
     <p align="left">MADチップ(プロテクトチップ)のついているROMも対応しました。 <br>
       MADチップのカートリッジのSRAM読み込み、書き込みは不完全です。 </p>
     <ul type="disc">
