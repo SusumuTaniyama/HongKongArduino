@@ -1,0 +1,70 @@
+<!-- saved from url=(0022)http://internet.e-mail -->
+<HTML>
+<HEAD>
+<TITLE>回路図の読み方</TITLE>
+<META content="text/html; charset=shift_jis" http-equiv=Content-Type>
+<META content="MSHTML 5.00.2614.3500" name=GENERATOR>
+<META NAME=GENERATOR CONTENT="HOTALL Ver.6.0W">
+</HEAD>
+<BODY BACKGROUND="bg.jpg">
+<P>
+<FONT SIZE=5 COLOR="#ffffff">回路図の読み方</FONT><BR>
+<BR>
+<A NAME="回路図の読み方"></A><FONT SIZE=3 COLOR="#ffffff">初心者の方でも解るようにホンコンの回路図の読み方について説明します。</FONT><BR>
+<BR>
+<FONT SIZE=3 COLOR="#ffffff"><B>回路図に書かれてある電子部品の説明</B></FONT><BR>
+<IMG SRC="kairozu.gif" ALT="" WIDTH=518 HEIGHT=589><BR>
+<FONT COLOR="#ffffff">＊各ICにパスコン用としてセラミックコンデンサをつけてください。</FONT><BR>
+<BR>
+<BR>
+<FONT COLOR="#ffffff"><B>回路図上の記号の説明</B></FONT><BR>
+<TABLE BORDER=1>
+<TBODY>
+<TR>
+<TD><FONT COLOR="#ffffff">記号</FONT></TD><TD><FONT COLOR="#ffffff">意味</FONT></TD>
+</TR>
+<TR>
+<TD><IMG SRC="vcc.gif" ALT="" WIDTH=24 HEIGHT=13><FONT COLOR="#ffffff">またはVcc</FONT></TD><TD><FONT COLOR="#ffffff">この記号のところは、全て繋ぐ</FONT></TD>
+</TR>
+<TR>
+<TD><IMG SRC="gnd.gif" ALT="" WIDTH=21 HEIGHT=13><FONT COLOR="#ffffff">またはGND</FONT></TD><TD><FONT COLOR="#ffffff">この記号のところは、全て繋ぎ、電源（電池）の－極へ</FONT></TD>
+</TR>
+<TR>
+<TD><IMG SRC="dcin.gif" ALT="" WIDTH=74 HEIGHT=15></TD><TD><FONT COLOR="#ffffff">電源（電池）の＋極のこと</FONT></TD>
+</TR>
+</TBODY>
+</TABLE><BR>
+<BR>
+<BR>
+<FONT SIZE=3 COLOR="#ffffff"><B>ICや極性のある電子部品の設置法説明</B></FONT><BR>
+<DIV ALIGN=LEFT><FONT SIZE=3 COLOR="#ffffff">　　　　　　　　　　　　　　</FONT>　　　　　　　<TABLE BORDER=1>
+<TBODY>
+<TR>
+<TD>
+ <BR>
+<DIV ALIGN=CENTER><FONT SIZE=3 COLOR="#ffffff">電解コンデンサ</FONT></DIV></TD><TD>
+ <BR>
+<DIV ALIGN=CENTER><FONT SIZE=3 COLOR="#ffffff">LED</FONT><FONT COLOR="#ffffff"> </FONT></DIV></TD><TD>
+ <BR>
+<DIV ALIGN=CENTER><FONT COLOR="#ffffff">　IC(74CH377の例)</FONT></DIV></TD>
+</TR>
+<TR>
+<TD>
+ <BR>
+<DIV ALIGN=CENTER><IMG SRC="denkaikondensa.gif" ALT="" WIDTH=66 HEIGHT=61></DIV></TD><TD>
+ <BR>
+<DIV ALIGN=CENTER><IMG SRC="led.gif" ALT="" ALIGN=BOTTOM WIDTH=44 HEIGHT=91></DIV></TD><TD>
+<FONT COLOR="#ffffff">　　　　回路図 　　　　　　　実際</FONT><BR>
+ <BR>
+<DIV ALIGN=CENTER><IMG SRC="ic.gif" ALT="" WIDTH=227 HEIGHT=137></DIV></TD>
+</TR>
+<TR>
+<TD><FONT COLOR="#ffffff">長いほうが『＋』です。</FONT></TD><TD>
+<FONT COLOR="#ffffff">長いほうから</FONT><BR>
+<FONT COLOR="#ffffff">短いほうへ</FONT><BR>
+<FONT COLOR="#ffffff">電流が流れる</FONT><BR>
+<FONT COLOR="#ffffff">と発光します。</FONT></TD><TD><FONT COLOR="#ffffff">回路図では外側の数がピン数です。</FONT></TD>
+</TR>
+</TBODY>
+</TABLE><BR></DIV></P></BODY>
+</HTML>

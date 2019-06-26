@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=x-sjis">
+<title>回路の作動原理とプログラム作成のヒント</title>
+<meta name="generator" content="Namo WebEditor v3.0">
+</head>
+
+<body bgcolor="white" text="black" link="blue" vlink="purple" alink="red">
+
+<h1>回路の動作原理とプログラム作成のヒント</h1>
+<h2>SFC ROMの種類</h2>
+<p>40pinが使われずに空いているLoROMと、40pinがアドレス線に使用されているHiROMがある。<br>
+ROMとSRAMの選択には74139を使っているタイプとNintendoのMADチップが使われているものがある。<br>
+MADチップが使われている場合40pinがアドレス線ではなくMADチップの入力に使われているとLoROMとなる。<br>
+それぞれのタイプによってROM情報が記録されているアドレス、SRAMの領域が異なる。 
+
+<div align="left"><table border>
+    <tr>
+        <td><p>（数値は16進数）</td>
+        <td><p>LoROM</td>
+        <td><p>HiROM</td>
+        <td><p>MAD LoROM</td>
+        <td><p>MAD HiROM</td>
+    </tr>
+    <tr>
+        <td><p>ROM情報</td>
+        <td><p>7FC0</td>
+        <td><p>FFC0</td>
+        <td><p>7FC0</td>
+        <td><p>FFC0</td>
+    </tr>
+    <tr>
+        <td><p>SRAM開始アドレス</td>
+        <td><p>380000</td>
+        <td><p>1C0000</td>
+        <td><p>384000?</td>
+        <td><p>206000</td>
+    </tr>
+</table></div>
+<h2>チャンネル選択とクロック</h2>
+<p>プリンタポートのAUTOFDXT、INIT、SLCTで、出力ICの選択とデータの入出力の切り替えをします。その３つの線はそれぞれ74138のA、B、Cに入力されます。AUTOFDXTとSLCTは反転出力なので注意が必要です。CBAの値の組み合わせによって出力のY0～Y7のどれかがLを出力残りの端子がHを出力します。 
+
+<table border>
+    <tr>
+        <td><p>CBA</td>
+        <td><p>Lを出力</td>
+        <td><p>役割</td>
+    </tr>
+    <tr>
+        <td><p>000</td>
+        <td><p>Y0</td>
+        <td><p>Ch1選択</td>
+    </tr>
+    <tr>
+        <td><p>001</td>
+        <td><p>Y1</td>
+        <td><p>Ch2選択</td>
+    </tr>
+    <tr>
+        <td><p>010</td>
+        <td><p>Y2</td>
+        <td><p>Ch3選択</td>
+    </tr>
+    <tr>
+        <td><p>011</td>
+        <td><p>Y3</td>
+        <td><p>Ch4選択</td>
+    </tr>
+    <tr>
+        <td><p>100</td>
+        <td><p>Y4</td>
+        <td><p>データ出力</td>
+    </tr>
+    <tr>
+        <td><p>101</td>
+        <td><p>Y5</td>
+        <td><p>データ入力</td>
+    </tr>
+</table>
+<p>74377のG端子はクロックイネーブル端子です。Lのときにクロックが有効になります。74138の出力は一つのピンしかLにならないので一つのICを選択できます。4つある74377をCh1～Ch4と呼ぶことにしています。Ch1～Ch3はアドレスの指定に使用し、Ch4はROMやSRAMの読み込み許可や選択に使用します。アドレスはCh1が最下位の値になります。<br>
+STROBE線はクロック操作に使用します。プリンタポートはひどくノイズがのっていたり、Hレベルが2.5Vあたりだったりしますので、7400を通しています。<br>
+データ線は8ビットの入出力に使用します。</p>
+<h2>アドレス値出力手順</h2>
+<ol>
+    <li>74138のCBAでCh1を選択。<br> その時クロックはLにしておく。 
+    <li>データ線にアドレスの下位8ビットの値をセット。 
+    <li>クロックをHにする。<br> この時74377にデータが取り込まれる。 
+    <li>クロックをLにする。 
+    <li>Ch2、Ch3も同様にアドレスを8ビットずつセットする。 
+</ol>
+<h2>データ入力手順</h2>
+<ol>
+    <li>任意のアドレスを出力する。<br> Ch4に0を出力し、ROMを読み込み可能にしておく。MADチップの場合は1を出力。<br> 
+    連続して読む場合は一度設定しておけば次はCh4の操作は不要。 
+    <li>74138のCBAを101にし入力モードにする。<br> この時、クロックはLにしておく。 
+    
+    <li>BUSY線から74645が入力モードになったことを確認する。<br> BUSY線がHの間は待機する。 
+    
+    <li>データ線から入力する。 
+</ol>
+<p>MAD LoROMは40pinをHにする必要がある。</p>
+<h2>SRAMの読み込み</h2>
+<ol>
+    <li>Ch4に2を設定。SRAMを読み込み可能にする。<br> MADチップの場合は6を出力。 
+    
+    <li>SRAMのアドレスを設定する。<br> HiRomの場合は1C0000からLoRomの場合は380000からがSRAMのアドレスになる。<br> 
+    MADチップの場合はHiRomは206000、LoRomは604000。 
+    <li>後の入力手順はROMの場合と同様。 
+    <li>読み込みおわったらCh4を元に戻す。 
+</ol>
+<h2>SRAMの書き込み</h2>
+<ol>
+    <li>Ch4に3を設定。SRAMのOEとディスエーブル、CEをイネーブルにする。<br> MADチップの場合は7を出力する。 
+    
+    <li>アドレスを設定する。 
+    <li>74138のCBAを100にし、データ出力モードにする。<br> このとき、STROBEはL(反転出力に注意)にしておく。 
+    
+    <li>STROBEをHにし、WEをイネーブルにする。 
+    <li>BUSY線から74645が有効になっているか確認してからデータを出力する。 
+    <li>STROBEをLにし、WEをディスエーブルにする。 
+    <li>Ch4を1に設定する。MADチップの場合は5。 
+</ol>
+</body>
+
+</html>

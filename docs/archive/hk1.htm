@@ -1,0 +1,116 @@
+<html>
+
+<head>
+<meta name="GENERATOR" content="Microsoft FrontPage 3.0">
+<title>ホンコン壱号</title>
+</head>
+
+<body bgcolor="#000000" text="#FFFFFF" link="#FFFF00" vlink="#FF00FF" background="bg.jpg">
+
+<h2><a name="ホンコン1号"></a>ホンコン1号</h2>
+
+<p>汎用吸出し機の第一号です。74138の挙動不審には苦労しました。</p>
+
+<h3>ホンコン１号の作り方</h3>
+
+<p>ホンコン１号はアダプタを取り替えることによった各機種のロムに対応できるようになっています。現在完成しているのはスーパーファミコンのアダプタです。 
+
+<ul>
+  <li><a href="#mark1">回路図</a> </li>
+  <li><a href="#mark2">スーパーファミコン用アダプタ回路図</a> </li>
+  <li><a href="#mark3">プログラムソース</a> </li>
+</ul>
+
+<p><font color="#FF0000">注意 </font>プリンタポートが双方向でない場合は動作しません。また、プリンタポートが双方向でもBIOSの設定次第で動作しない場合があります。アワードのBIOSの場合はパラレルポートをEPPに設定する必要があります。 
+</p>
+
+<h4><a name="mark1"></a>回路図</h4>
+
+<p>本体の回路図です。パソコンとの接続には双方向プリンタポート、アダプタの取り付けはフラットケーブルで行います。回路は単純ですが、配線が多いので配線ミスには気を付けましょう。 
+</p>
+
+<p>材料 
+
+<ul>
+  <li>74LS138 : 3 to 8 デコーダ </li>
+  <li>74HC244 : 3statebuffer </li>
+  <li>74HC273 : 8 D-フリップフロップ </li>
+  <li>LED * 32 </li>
+  <li>10KΩ 4集合抵抗 </li>
+  <li>1KΩ 8集合抵抗 * 4 </li>
+  <li>1KΩ, 10KΩ, 100Ω * 32 </li>
+  <li>150Ω * 8 </li>
+  <li>MC7805 : 3端子レギュレータ </li>
+  <li>100μF, 10μF コンデンサ </li>
+  <li>0.1μF コンデンサ * 11 </li>
+  <li>2SC1815 * 32 : トランジスタ </li>
+  <li>プリンタケーブル端子 </li>
+  <li>34ピン圧着コネクタ </li>
+  <li>他、配線材など </li>
+</ul>
+
+<p>回路図は<a href="HKCIR1.HTM">こちら</a> </p>
+
+<p>基盤の写真 <a href="hongkong.jpg">表</a> <a href="hongkong2.jpg">裏</a></p>
+
+<p>参考資料 
+
+<ul>
+  <li>バックアップ活用テクニック総集編 </li>
+  <li>トランジスタ技術1996 12 </li>
+  <li>７４シリーズIC規格表 </li>
+</ul>
+
+<h4><a name="mark2"></a>スーパーファミコン用アダプタ回路図</h4>
+
+<p>ホンコン１号に取り付けてスーパーファミコンのロムデータを吸い出せるようにするアダプタです。簡単です。 
+</p>
+
+<p>材料 
+
+<ul>
+  <li>74HC244 : 3statebuffer </li>
+  <li>74HC273 : 8 D-フリップフロップ </li>
+  <li>LED * 8 </li>
+  <li>1KΩ * 8 </li>
+  <li>1KΩ 8集合抵抗 </li>
+  <li>34ピン圧着コネクタ </li>
+  <li>他、配線材など </li>
+</ul>
+
+<p>回路図は<a href="snesrom.gif">こちら</a> </p>
+
+<h4><a name="mark3"></a>プログラムソース（C/C++)</h4>
+
+<p>現在コマンドラインのデバッグ機能つきソフトを用意しています。１つのアドレスをしてして値を調べたり、プリンタポートに自由な値を出力したりできます。回路ができた後のデバッグで重宝します。もちろん吸出し機能もあります。 
+</p>
+
+<p>ソースファイルは<a href="hongkong.cpp">こちら</a> </p>
+
+<p>IOポートを操作する関数がコンパイラに用意されてないときはインラインアセンブラによって次の関数を定義してください。 
+</p>
+
+<p>void outp(unsigned short port, unsigned char databyte)<br>
+{<br>
+_asm {<br>
+mov al, databyte<br>
+mov dx, port<br>
+out dx, al<br>
+}<br>
+}<br>
+<br>
+unsigned char inp(unsigned short port)<br>
+{<br>
+_asm {<br>
+mov dx, port<br>
+in al, dx<br>
+}<br>
+}<br>
+</p>
+
+<p>VisualC++の場合は_outportと_inport関数が利用できます。</p>
+
+<p>Windows95のコンソールモード用にコンパイルした実行可能ファイルは<a
+href="hongkong.lzh">こちら</a> </p>
+</body>
+</html>
